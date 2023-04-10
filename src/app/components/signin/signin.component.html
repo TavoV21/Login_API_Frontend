@@ -1,0 +1,32 @@
+<div class="card mx-auto shadow-lg" style="width: 24rem;position: relative;top: 50px;">
+    <div class="card-body">
+      <h5 class="card-title text-center"><b>Inicio de Sesion</b> </h5><br>
+      <form (submit)="signIn()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email </label>
+          <input type="email" [(ngModel)]="user.email" name="email" class="form-control" id="exampleInputEmail1" required placeholder="Ingrese su email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel">
+          <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']">Favor ingresar un email</div> 
+            <div *ngIf="email.errors?.['pattern']">Favor ingresar un email valido</div>     
+        </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" [(ngModel)]="user.password" name="password" class="form-control" id="exampleInputPassword1" required minlength="4" maxlength="8" placeholder="Ingrese una contraseña" #password="ngModel">
+          <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.['required']">Favor ingresar una contraseña</div>
+            <div *ngIf="password.errors?.['minlength']">La contraseña debe ser de minimo 4 caracteres</div>
+            <div *ngIf="password.errors?.['maxlength']">La contraseña debe ser de maximo 10 caracteres</div>
+    
+        </div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+      </form>
+    
+    </div>
+    
+  
+  </div>
+
+ 

@@ -1,0 +1,12 @@
+
+<div class="container" style="margin-bottom:30px">
+  <div class="card text-white rounded shadow-lg bg-dark mb-3" style="max-width: 20rem;float: left; margin-left: 30px;" *ngFor="let t of task">
+    <div class="card-header">{{t.name}}</div>
+    <div class="card-body" >
+      <p class="card-text">{{t.description}}</p>
+    </div>
+    <div class="card-footer text-white">
+        {{t.date}}
+      </div>
+  </div>
+</div>
